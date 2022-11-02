@@ -1,4 +1,4 @@
-require './lib/room'
+require './spec/spec_helper'
 
 RSpec.describe Room do
   describe 'Iteration 1' do
@@ -25,3 +25,5 @@ RSpec.describe Room do
     end
   end
 end
+
+# let (:) {}
