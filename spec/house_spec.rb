@@ -20,6 +20,25 @@ RSpec.describe House do
       expect(house1.rooms).to eq([room1, room2])
     end
   end
+  
+  describe 'Iteration 3' do
+    let (:house1) {House.new("$400000", "123 sugar lane")}
+    let (:room1) {Room.new(:bedroom, 10, '13')}
+    let (:room2) {Room.new(:bedroom, 11, '15')}
+    
+    it 'can recognize if a house is above market avg price' do
+      
+    end
+    
+    xit 'can list rooms within a certain category' do
+    end
+    
+    xit 'can calculate its total area' do
+    end
+    
+    xit 'can return the details of the house as a hash' do
+    end
+    
 end
 
 # expect().to eq()

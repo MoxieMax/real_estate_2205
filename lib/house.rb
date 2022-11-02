@@ -11,4 +11,17 @@ class House
   def add_room(room)
     @rooms << room
   end
+  
+  def above_market_average
+  end
+    
+  # def rooms_from_category
+  # end
+  # 
+  # def area
+  # end
+  # 
+  # def details
+  # end
+    
 end
