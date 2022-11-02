@@ -12,16 +12,30 @@ class House
     @rooms << room
   end
   
-  def above_market_average
+  def above_market_average?
+    if @price > 500000
+    else
+      false
+    end
   end
     
-  # def rooms_from_category
-  # end
-  # 
-  # def area
-  # end
-  # 
-  # def details
-  # end
+  def rooms_from_category(category)
+    @rooms.find_all do |room|
+      room.category
+    end
+  end
+  
+  def area
+    @rooms.map do |room|
+      room.area
+    end.sum
+  end
+  
+  def details
+    {
+      "price" => @price,
+      "address" => @address
+    }
+  end
     
 end

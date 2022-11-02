@@ -25,20 +25,41 @@ RSpec.describe House do
     let (:house1) {House.new("$400000", "123 sugar lane")}
     let (:room1) {Room.new(:bedroom, 10, '13')}
     let (:room2) {Room.new(:bedroom, 11, '15')}
+    let (:room3) {Room.new(:living_room, 25, '15')}
+    let (:room4) {Room.new(:basement, 30, '41')}
     
     it 'can recognize if a house is above market avg price' do
+      expect(house1.above_market_average?).to eq(false)
+    end
+    
+    it 'can list rooms within a certain category' do
+      house1.add_room(room1)
+      house1.add_room(room2)
+      house1.add_room(room3)
+      house1.add_room(room4)
       
+      expect(house1.rooms_from_category(:bedroom))
+      expect(house1.rooms_from_category(:basement))
     end
     
-    xit 'can list rooms within a certain category' do
+    it 'can calculate its total area' do
+      house1.add_room(room1)
+      house1.add_room(room2)
+      house1.add_room(room3)
+      house1.add_room(room4)
+      
+      expect(house1.area).to eq(1900)
     end
     
-    xit 'can calculate its total area' do
+    it 'can return the details of the house as a hash' do
+      house1.add_room(room1)
+      house1.add_room(room2)
+      house1.add_room(room3)
+      house1.add_room(room4)
+      
+      expect(house1.details).to eq({"price" => 400000, "address" => "123 sugar lane"})
     end
-    
-    xit 'can return the details of the house as a hash' do
-    end
-    
+  end
 end
 
 # expect().to eq()
